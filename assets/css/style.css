@@ -1,0 +1,539 @@
+            :root {
+           --first-color: rgb(78, 78, 78);
+           --second-color: rgb(0, 0, 0);
+           --hero-color: rgba(0, 0, 0, 0.288);
+           --hero-box-color: rgba(94, 94, 94, 0.8);
+           --section-font-color: rgba(255, 255, 255);
+           --grid-box-color: rgba(125, 129, 131, 0.795);
+       }
+       
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       /*style body color and font family*/
+       
+       h1 {
+           color: antiquewhite;
+       }
+       
+       body {
+           font-family: Helvetica, Arial, sans-serif;
+           background-color: var(--first-color);
+       }
+       
+       header {
+           padding: 0px 45px;
+           display: flex;
+           /*add display: flex to allow the content on header to shrink with screen-size*/
+           justify-content: space-between;
+           /*add justify-content: (choose an option) to be able to separate the content from its parent element*/
+           flex-wrap: wrap;
+           /*use flex-wrap: <choose wrap> to specify that if screen gets smaller lines can greak into more line*/
+           /*This will make the header sticky and scroll down as we scroll down */
+           position: -webkit-sticky;
+           position: sticky;
+           top: 0;
+           /*this is to be able to support other browsers like IE and Ios above 3 declarations*/
+           background-image: url("../images/pexels-felix-mittermeier-956981.jpg");
+           background-size: inherit;
+           background-position: center;
+           background-attachment: fixed;
+           background-position: 20%;
+           /*this will keep the header on top (stacking layers first on top)*/
+           z-index: 9999;
+       }
+       /*Navigation margin to 14px from top*/
+       
+       header nav {
+           margin: 14px 0;
+       }
+       /*header h1 style*/
+       
+       header h1 {
+           font-weight: bold;
+           font-size: 40px;
+           margin: 0;
+           text-shadow: 0 0 30px var(--first-color);
+       }
+       /*header anchor style*/
+       
+       header a {
+           text-decoration: none;
+           color: var(--section-font-color);
+       }
+       /*Navigation links position*/
+       
+       header nav ul {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: space-between;
+           align-items: center;
+           list-style: none;
+       }
+       /*Navigation links style*/
+       
+       header nav ul li a {
+           padding: 10px 15px;
+           font-weight: lighter;
+           font-size: 1.60vw;
+           /*we change tha font to 1.55vw because we are telling the broweser the font should be 1.55 percent of the screen size*/
+       }
+       /*Hero Image Style*/
+       
+       .hero {
+           background-image: url("../images/pexels-felix-mittermeier-956981.jpg");
+           background-size: inherit;
+           background-position: center;
+           display: flex;
+           justify-content: flex-end;
+           flex-wrap: wrap-reverse;
+           align-items: stretch;
+           background-attachment: fixed;
+           background-position: 20%;
+       }
+       /*Hero Box Syle*/
+       
+       .hero-code {
+           width: 50%;
+           text-align: center;
+           margin: 3%;
+           color: var(--section-font-color);
+           font-size: 23px;
+           line-height: 1.2;
+           color: var(--section-font-color);
+           background-color: var(--hero-box-color);
+           padding: 20px;
+           border-style: solid;
+           border-width: 3px;
+           width: 40%;
+           margin: 3.5%;
+           box-shadow: 0 0 30px var(--first-color);
+           border-radius: 15px;
+       }
+       /*Hero Box Style H2*/
+       
+       .hero-code h2 {
+           font-style: italic;
+           font-size: 40px;
+           text-shadow: 0 0 10px var(--second-color);
+       }
+       /*Style titles in sections*/
+       
+       .title-section {
+           font-size: 40px;
+           color: var(--section-font-color);
+           border-bottom: 4px solid;
+           border-inline-end-width: 50vmax;
+           padding-bottom: 2px;
+           text-align: center;
+           margin: 23px auto 20px auto;
+           width: 20%;
+       }
+       /*border color for sections*/
+       
+       .border1 {
+           border-color: var(--section-font-color)
+       }
+       /*flex-row in section*/
+       
+       .flex-row {
+           display: flex;
+       }
+       /*Style for Projects Section*/
+       
+       .container {
+           overflow: auto;
+           width: auto;
+       }
+       
+       .container h3 {
+           color: var(--second-color);
+           font-size: 25px;
+           margin-left: 35px;
+       }
+       
+       .container p {
+           font-size: 20px;
+       }
+       /*image style*/
+       
+       .image1 {
+           width: 220px;
+           height: 280px;
+           margin: 0 15px 35px 35px;
+       }
+       /*items within the section to float*/
+       
+       .bio,
+       .image1 {
+           float: left;
+       }
+       
+       .class-projects {
+           background: var(--second-color);
+       }
+       /*to shorten the text width in the div*/
+       
+       .bio {
+           width: 100%;
+       }
+       
+       .class-projects {
+           background-color: var(--second-color);
+           width: 100%;
+       }
+       /*Style Projects Section*/
+       
+       .grid-item {
+           display: flex;
+           justify-content: center;
+           border: 5px solid rgba(0, 0, 0, 0.2);
+           margin: 5px auto;
+           border-radius: 5px;
+           font-size: 20px;
+       }
+       
+       .grid-container {
+           display: grid;
+           grid-template-columns: repeat(3, 4fr);
+           grid-gap: 5px;
+       }
+       
+       .item-1:hover,
+       .item-2:hover,
+       .item-3:hover,
+       .item-4:hover,
+       .item-5:hover {
+           transform: scale(1.3);
+       }
+       
+       .grid-container a {
+           width: 100%;
+           height: 100%;
+       }
+       
+       .item-1 {
+           grid-row: 1 / span 2;
+           grid-column: 1 / span 1;
+           background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+           url(../images/horiseon.PNG);
+           position: relative;
+           cursor: pointer;
+           width: 280px;
+           height: 215px;
+           font-size: 12px;
+           align-items: flex-end;
+           justify-content: flex-start;
+       }
+       
+       .item-1-1 {
+           grid-row: 1 / span 2;
+           grid-column: 1 / span 1;
+           background: var(--grid-box-color);
+           position: relative;
+           cursor: pointer;
+           width: 280px;
+           height: 45px;
+           font-size: 12px;
+           align-items: center;
+           justify-content: center;
+           align-self: flex-end;
+           margin-bottom: 47px;
+       }
+       
+       .item-1-1 a,
+       .item-2-2 a,
+       .item-3-3 a {
+           font-size: 15px;
+           text-decoration: none;
+           color: white;
+           text-align: center;
+           align-items: center;
+           justify-content: center;
+           align-self: flex-end;
+       }
+       
+       .item-2 {
+           grid-row: 2 / span 2;
+           grid-column: 2 / span 1;
+           background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+           url(../images/run-buddy.PNG);
+           position: relative;
+           cursor: pointer;
+           width: 450px;
+           height: 300px;
+           justify-content: flex-start;
+           align-items: flex-end;
+           font-size: 12px;
+       }
+       
+       .item-2-2 {
+           grid-row: 2 / span 2;
+           grid-column: 2 / span 1;
+           background: var(--grid-box-color);
+           position: relative;
+           cursor: pointer;
+           width: 450px;
+           height: 45px;
+           font-size: 12px;
+           align-items: center;
+           justify-content: center;
+           align-self: flex-end;
+           margin-bottom: 0px;
+       }
+       
+       .item-3 {
+           grid-row: 1 / span 2;
+           grid-column: 3 / span 1;
+           background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+           url(../images/portfolio_n.png);
+           position: relative;
+           cursor: pointer;
+           width: 280px;
+           height: 215px;
+           align-items: flex-end;
+           font-size: 12px;
+           justify-content: flex-start;
+       }
+       
+       .item-3-3 {
+           grid-row: 1 / span 2;
+           grid-column: 3 / span 1;
+           background: var(--grid-box-color);
+           position: relative;
+           cursor: pointer;
+           width: 280px;
+           height: 45px;
+           font-size: 12px;
+           align-items: center;
+           justify-content: center;
+           align-self: flex-end;
+           margin-bottom: 47px;
+       }
+       
+       .item-4 {
+           grid-row: 3 / span 2;
+           grid-column: 1 / span 1;
+           background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+           url(../images/placeholder.png);
+           position: relative;
+           cursor: pointer;
+           width: 280px;
+           height: 215px;
+           align-items: flex-end;
+           justify-content: flex-start;
+           font-size: 12px;
+       }
+       
+       .item-5 {
+           grid-row: 3 / span 2;
+           grid-column: 3 / span 3;
+           background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+           url(../images/placeholder.png);
+           position: relative;
+           cursor: pointer;
+           width: 280px;
+           height: 215px;
+           align-items: flex-end;
+           justify-content: flex-start;
+           font-size: 12px;
+       }
+       /*Style Contact Me Section*/
+       
+       .information {
+           display: flex;
+           justify-content: center;
+           flex-wrap: wrap;
+       }
+       
+       .map {
+           padding: 0px 0px 0px 0px;
+           border-style: solid;
+           border-width: 3px;
+           box-shadow: 0 0 30px var(--first-color);
+           border-radius: 4px;
+       }
+       
+       .contact-me {
+           padding-bottom: 15px;
+           text-decoration: none;
+       }
+       
+       .address {
+           padding: 0 45px 20px 60px;
+       }
+       
+       .links {
+           padding: 0 45px 20px 60px;
+           list-style: none;
+       }
+       /*Style footer*/
+       
+       footer {
+           line-height: 1.5;
+           text-align: center;
+           background-color: var(--second-color);
+           color: var(--section-font-color);
+           margin-top: 10px;
+       }
+       /*Media Queries*/
+       
+       @media screen and (max-width: 980px) {
+           header {
+               /* this will be applied on any screen smaller than 980px*/
+               padding-bottom: 0;
+               justify-content: center;
+               position: relative;
+           }
+           header h1 {
+               width: 100%;
+               text-align: center;
+               text-shadow: 0 0 10px var(--second-color);
+           }
+           header nav ul {
+               margin-top: 10px;
+               width: 100%;
+               justify-content: center;
+           }
+           header nav ul li a {
+               font-size: 20px;
+               text-shadow: 0 0 10px var(--second-color);
+           }
+           footer h2,
+           footer div {
+               text-align: center;
+               width: 100%;
+           }
+           .hero-code {
+               width: 100%;
+           }
+           .title-section {
+               width: 80%;
+           }
+           .grid-container a {
+               width: 100%;
+               height: 100%;
+           }
+           .grid-container {
+               display: flexbox;
+               justify-content: center;
+               width: 100%;
+           }
+           .item-1 {
+               grid-row: 1 / span 2;
+               grid-column: 2 / span 1;
+               background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+               url(../images/horiseon.PNG);
+               position: relative;
+               cursor: pointer;
+               width: 280px;
+               height: 215px;
+               font-size: 12px;
+               align-items: flex-end;
+               justify-content: flex-start;
+           }
+           .item-1-1 {
+               grid-row: 1 / span 2;
+               grid-column: 2 / span 1;
+               background: var(--grid-box-color);
+               position: relative;
+               cursor: pointer;
+               width: 280px;
+               height: 45px;
+               font-size: 12px;
+               align-items: center;
+               justify-content: center;
+               align-self: flex-end;
+           }
+           .item-1-1 a,
+           .item-2-2 a,
+           .item-3-3 a {
+               font-size: 15px;
+               text-decoration: none;
+               color: white;
+               text-align: center;
+               align-items: center;
+               justify-content: center;
+               align-self: flex-end;
+           }
+           .item-2 {
+               grid-row: 3 / span 1;
+               grid-column: 2 / span 1;
+               background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+               url(../images/run-buddy.PNG);
+               position: relative;
+               cursor: pointer;
+               width: 280px;
+               height: 215px;
+               justify-content: flex-start;
+               align-items: flex-end;
+               font-size: 12px;
+           }
+           .item-2-2 {
+               grid-row: 3 / span 1;
+               grid-column: 2 / span 1;
+               background: var(--grid-box-color);
+               position: relative;
+               cursor: pointer;
+               width: 280px;
+               height: 45px;
+               font-size: 12px;
+               align-items: center;
+               justify-content: center;
+               align-self: flex-end;
+               margin-bottom: 0px;
+           }
+           .item-3 {
+               grid-row: 4 / span 1;
+               grid-column: 2 / span 1;
+               background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+               url(../images/portfolio_n.png);
+               position: relative;
+               cursor: pointer;
+               width: 280px;
+               height: 215px;
+               align-items: flex-end;
+               font-size: 12px;
+               justify-content: flex-start;
+           }
+           .item-3-3 {
+               grid-row: 4 / span 1;
+               grid-column: 2 / span 1;
+               background: var(--grid-box-color);
+               position: relative;
+               cursor: pointer;
+               width: 280px;
+               height: 45px;
+               font-size: 12px;
+               align-items: center;
+               justify-content: center;
+               align-self: flex-end;
+           }
+           .item-4 {
+               grid-row: 5 / span 1;
+               grid-column: 2 / span 1;
+               background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+               url(../images/placeholder.png);
+               position: relative;
+               cursor: pointer;
+               width: 280px;
+               height: 215px;
+               align-items: flex-end;
+               justify-content: center;
+               font-size: 12px;
+           }
+           .item-5 {
+               grid-row: 6 / span 1;
+               grid-column: 2 / span 1;
+               background: linear-gradient( rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), /* bottom, image */
+               url(../images/placeholder.png);
+               position: relative;
+               cursor: pointer;
+               width: 280px;
+               height: 215px;
+               align-items: flex-end;
+               justify-content: center;
+               font-size: 12px;
+           }
