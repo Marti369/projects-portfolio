@@ -19,3 +19,6 @@ Edwin Martinez
 # Screenshot of the deployed application
 
 ![portfolio demo](./assets/images/portfolio_big.png)
+
+#Side note
+This project was repurpused from previous Cohort. I was transfered from another cohort into this session and used the same layout for this project.
